@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in?, only: [:new, :create]
+  before_action :authorize!, except: [:new, :create]
+
   def new
     @user = User.new
     render :signup
@@ -9,15 +12,34 @@ class UsersController < ApplicationController
     if @user && @user.valid?
       @user.save
       session[:user_id] = @user.id
-      # binding.pry
       redirect_to user_path(@user)
     else
-      # binding.pry
       render :signup
     end
   end
 
   def show
+    # binding.pry
+    user = User.find(params[:id])
+    return head(:forbidden) unless current_user == user
+  end
+
+  def edit
+    render :settings
+  end
+
+  def update
+    if current_user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      render :settings
+    end
+  end
+
+  def destroy
+    current_user.destroy
+    session.delete :user_id
+    redirect_to signup_path
   end
 
   private

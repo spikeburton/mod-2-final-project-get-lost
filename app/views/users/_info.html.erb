@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for current_user do |f| %>
   <%= f.label :first_name, "First Name:" %>
   <%= f.text_field :first_name %>
   <br>
@@ -20,4 +20,5 @@
   <%= f.label :state, "State:" %>
   <%= f.text_field :state %>
   <br>
+  <%= f.submit %>
 <% end %>

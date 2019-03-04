@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :logged_in?, except: [:destroy]
+
   def new
     render :login
   end
@@ -6,7 +8,6 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      # binding.pry
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
