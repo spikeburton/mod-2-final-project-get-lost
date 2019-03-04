@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       # binding.pry
       redirect_to user_path(@user)
     else
-      redirect_to signup_path
+      # binding.pry
+      render :signup
     end
   end
 
