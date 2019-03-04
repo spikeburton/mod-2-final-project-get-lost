@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+  <%= f.label :first_name, "First Name:" %>
+  <%= f.text_field :first_name %>
+  <br>
+  <%= f.label :last_name, "Last Name:" %>
+  <%= f.text_field :last_name %>
+  <br>
+  <%= f.label :email, "Email:" %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :address, "Address:" %>
+  <%= f.text_field :address %>
+  <br>
+  <%= f.label :city, "City:" %>
+  <%= f.text_field :city %>
+  <br>
+  <%= f.label :zipcode, "Zip:" %>
+  <%= f.number_field :zipcode %>
+  <br>
+  <%= f.label :state, "State:" %>
+  <%= f.text_field :state %>
+  <br>
+<% end %>

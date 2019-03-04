@@ -1,0 +1,4 @@
+<h1><%= "Welcome, #{current_user.first_name}" %></h1>
+<%= form_tag logout_path, method: :delete do %>
+  <%= submit_tag "logout" %>
+<% end %>
