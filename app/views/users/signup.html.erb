@@ -1,4 +1,7 @@
 <h1>Sign Up</h1>
+
+<%# Come get lost with us! %>
+
 <% if @user.errors.messages %>
   <ul>
   <% @user.errors.full_messages.each do |m| %>
@@ -41,3 +44,5 @@
   <%= f.submit "Sign Up" %>
 <% end %>
 <%= link_to "Already registered? Login", login_path %>
+
+<%# Already Experienced Adventure? Please sign in! %>
