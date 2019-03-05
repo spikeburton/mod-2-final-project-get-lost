@@ -1,6 +1,5 @@
 <h1>Sign Up</h1>
-
-<%# Come get lost with us! %>
+<h3>Come <em>Get Lost</em> with us!</h3>
 
 <% if @user.errors.messages %>
   <ul>
@@ -10,16 +9,15 @@
   </ul>
 <% end %>
 <%= form_for @user, url: signup_path do |f| %>
-  <%= f.label :username, "Choose a username" %>
+  <%= f.label :username, "Choose a Username:" %>
   <%= f.text_field :username %>
   <br>
-  <%= f.label :password, "Enter a password" %>
+  <%= f.label :password, "Choose a Password:" %>
   <%= f.password_field :password %>
   <br>
-  <%= f.label :password_confirmation, "Re-type password" %>
+  <%= f.label :password_confirmation, "Re-enter Password:" %>
   <%= f.password_field :password_confirmation %>
-  <br>
-  <h2>Basic Information</h1>
+  <br><br>
   <%= f.label :first_name, "First Name:" %>
   <%= f.text_field :first_name %>
   <br>
@@ -43,6 +41,6 @@
   <br>
   <%= f.submit "Sign Up" %>
 <% end %>
-<%= link_to "Already registered? Login", login_path %>
+<%= link_to "Already Experienced? Please sign in!", login_path %>
 
 <%# Already Experienced Adventure? Please sign in! %>
