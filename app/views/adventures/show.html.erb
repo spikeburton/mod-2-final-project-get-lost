@@ -1,7 +1,9 @@
 <h1><%= @adventure.location %></h1>
 <p><strong>Topography</strong>: <%= @adventure.topography %></p>
-<%= form_for @adventure, method: :post, url: add_adventure_path do |f| %>
-  <%= f.submit "Add Adventure" %>
+<% if current_user.adventures.exclude? @adventure %>
+  <%= form_for @adventure, method: :post, url: add_adventure_path do |f| %>
+    <%= f.submit "Add Adventure" %>
+  <% end %>
 <% end %>
 <% if flash.alert %>
   <div>
