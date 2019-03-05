@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/settings' => 'users#edit'
   post '/adventures/:id' => 'adventures#add_adventure_to_user', as: :add_adventure
+  post '/adventures' => 'adventures#index'
   # get '/users/:username' => 'users#show', as: 'user'
 
   resources :adventures

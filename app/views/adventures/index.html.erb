@@ -1,5 +1,12 @@
 <h1>All Adventures</h1>
 <p>Choose an Adventure to add to your list!</p>
+<div>
+<%= form_tag adventures_path, method: :post do %>
+  <%= label_tag :topography, "Filter By Topography" %>
+  <%= select_tag :topography, options_for_select(Adventure.topographies), { prompt: "All" } %>
+  <%= submit_tag "Filter" %>
+<% end %>
+</div>
 <table>
   <thead>
     <tr>
