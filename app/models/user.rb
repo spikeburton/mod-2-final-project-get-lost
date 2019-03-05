@@ -8,4 +8,12 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :city, presence: true
   validates :state, presence: true
+
+  def add_adventure(a)
+    if self.adventures.exclude?(a)
+      self.adventures << a
+    else
+      nil
+    end
+  end
 end
