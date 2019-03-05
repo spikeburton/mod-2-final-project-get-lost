@@ -16,4 +16,8 @@ class User < ApplicationRecord
       nil
     end
   end
+
+  def remove_adventure(a)
+    self.adventures.destroy(a)
+  end
 end
