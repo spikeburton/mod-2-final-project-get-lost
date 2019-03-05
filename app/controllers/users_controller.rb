@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def destroy
     current_user.destroy
     session.delete :user_id
-    redirect_to signup_path
+    redirect_to root_path
   end
 
   private
