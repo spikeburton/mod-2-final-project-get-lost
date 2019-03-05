@@ -48,7 +48,7 @@ users = [
   {first_name: "Tez", last_name: "Smith", email: "tezsemail@gmail.com", address: "Tez's Address", city: "Atlanta", zipcode: 34444, state: "GA", username: "montez", password: "tezspassword" },
   {first_name: "Ronnie", last_name: "Ricardo", email: "ronniesemail@gmail.com", address: "Ronnie's Address", city: "Atlanta", zipcode: 35555, state: "GA", username: "Roniece", password: "ronniespassword"},
   {first_name: "Arthur", last_name: "Torres", email: "arthursemail@gmail.com", address: "Arthur's Address", city: "Atlanta", zipcode: 36666, state: "GA", username: "Art", password: "arthurspassword"},
-  {first_name: "Megan", last_name: "Fago", email: "megansemail@gmail.com", address: "Megan's Address", city: "Atlanta", zipcode: 37777, state: "GA", username: "Meg", password_digest: "meganspassword"},
+  {first_name: "Megan", last_name: "Fago", email: "megansemail@gmail.com", address: "Megan's Address", city: "Atlanta", zipcode: 37777, state: "GA", username: "Meg", password: "meganspassword"},
   {first_name: "Blair", last_name: "Carroll", email: "blairsemail@gmail.com", address: "Blair's Address", city: "Atlanta", zipcode: 38888, state: "GA", username: "FancyBlair", password: "blairspassword"},
   {first_name: "Vanessa", last_name: "Prema", email: "vanessasemail@gmail.com", address: "Vanessa's Address", city: "Atlanta", zipcode: 39999, state: "GA", username: "Nessa", password: "vanessaspassword"}
 ]
