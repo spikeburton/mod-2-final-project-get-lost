@@ -3,3 +3,4 @@
 <%= form_for current_user, method: :delete do |f| %>
   <%= f.submit "Delete Account" %>
 <% end %>
+<%= link_to "Return to my account", user_path(current_user) %>

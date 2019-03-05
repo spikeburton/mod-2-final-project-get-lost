@@ -1,6 +1,7 @@
 <h1><%= "Welcome #{current_user.first_name}!" %></h1>
 <h3>Are you ready to <em>Get Lost</em>?</h3>
 
+<%= link_to "Add an Adventure", adventures_path %>
 <%= link_to "Settings", settings_path %>
 <br><br>
 <%= form_tag logout_path, method: :delete do %>
