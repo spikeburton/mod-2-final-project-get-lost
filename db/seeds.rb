@@ -58,4 +58,6 @@ users.each {|user| User.create(user)}
 ### UserAdventure
 # * `belongs_to user`
 # * `belongs_to adventure`
-users = users.map { |user| user.merge( { adventure_id: Adventure.all.sample.id } ) }
+# users = users.map { |user| user.merge( { adventure_id: Adventure.all.sample.id } ) }
+
+Adventure.all.each { |a| User.all.sample.adventures << a }

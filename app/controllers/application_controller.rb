@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
     user_id && User.find(user_id)
   end
 
-  def logged_in?
-    redirect_to user_path(current_user) if current_user
-  end
-
   def authorize!
     redirect_to login_path unless current_user
+  end
+
+  def logged_in?
+    redirect_to user_path(current_user) if current_user
   end
 end
