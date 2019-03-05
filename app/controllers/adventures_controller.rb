@@ -18,10 +18,4 @@ class AdventuresController < ApplicationController
       render :show
     end
   end
-
-  def remove_adventure_from_user
-    @adventure = Adventure.find(params[:id])
-    # current_user.user_adventures.where
-    binding.pry
-  end
 end
