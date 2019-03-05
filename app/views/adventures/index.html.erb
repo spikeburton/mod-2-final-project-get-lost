@@ -1,0 +1,20 @@
+<h1>All Adventures</h1>
+<p>Choose an Adventure to add to your list!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Topography</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @adventures.each do |a| %>
+      <tr>
+        <td><%= link_to a.location, adventure_path(a) %></td>
+        <td><%= a.topography %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to "Return to my account", user_path(current_user) %>

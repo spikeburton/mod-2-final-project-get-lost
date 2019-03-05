@@ -1,0 +1,12 @@
+<h1><%= @adventure.location %></h1>
+<p><strong>Topography</strong>: <%= @adventure.topography %></p>
+<%= form_for @adventure, method: :post, url: add_adventure_path do |f| %>
+  <%= f.submit "Add Adventure" %>
+<% end %>
+<% if flash.alert %>
+  <div>
+    <p><%= flash.alert %></p>
+  </div>
+<% end %>
+<br>
+<%= link_to "Back to my page", user_path(current_user) %>
