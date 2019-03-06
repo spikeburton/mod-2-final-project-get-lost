@@ -1,20 +1,49 @@
 class UsersController < ApplicationController
-  before_action :authorize!, except: [:new, :create]
-  before_action :logged_in?, only: [:new, :create]
+  # before_action :authorize!, except: [:new, :create, :validate_signup]
+  # before_action :logged_in?, only: [:new, :create]
 
   def new
     @user = User.new
-    render :signup
+    # render :signup
+    render :info_signup
+  end
+
+  def validate_signup
+    # current_step = params[:current_step]
+    # session[:user_attributes] = user_params
+
+    # case current_step
+    # when 'info'
+      @signup = UserSignup::Info.new(user_params)
+      # @signup.user.attributes = user_params
+      session[:user_attributes] = @signup.user.attributes
+      # binding.pry
+      @user = @signup.user
+      if @signup.valid?
+        render :username_signup #username_signup_user_path
+      else
+        render :info_signup
+      end
+    # when 'username'
+    #   @signup = UserSignup::UserName.new(session[:user_attributes])
+    #   @signup.user.attributes = user_params
+    #   session[:user_attributes] = @signup.user.attributes
+    #   binding.pry
+    # end
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(session[:user_attributes])
+    @user.attributes = user_params
+    binding.pry
+    # @user = User.new(user_params)
     if @user && @user.valid?
       @user.save
       session[:user_id] = @user.id
+      session.delete :user_attributes
       redirect_to user_path(@user)
     else
-      render :signup
+      render :username_signup
     end
   end
 
