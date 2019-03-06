@@ -17,8 +17,4 @@ module UserSignup
     validates :city, presence: true
     validates :state, presence: true
   end
-
-  # class UserName < Info
-  #   validates :username, presence: true, uniqueness: true
-  # end
 end
