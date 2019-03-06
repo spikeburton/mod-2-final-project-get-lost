@@ -1,12 +1,25 @@
 <h1>All Adventures</h1>
-<p>Choose an Adventure to add to your list!</p>
-<div>
-<%= form_tag adventures_path, method: :post do %>
-  <%= label_tag :topography, "Filter By Topography" %>
-  <%= select_tag :topography, options_for_select(Adventure.topographies), { prompt: "All" } %>
-  <%= submit_tag "Filter" %>
-<% end %>
+<div class="ui two column grid">
+  <div class="column">
+    <span>Choose an Adventure to add to your list!</span>
+  </div>
+  <div class="middle aligned column">
+    <div class="ui form">
+    <%= form_tag adventures_path, method: :post do %>
+      <div class="fields">
+        <div class="inline field">
+        <%= label_tag :topography, "Filter By Topography" %>
+        <%= select_tag :topography, options_for_select(Adventure.topographies), { prompt: "All" } %>
+        </div>
+        <div class="field">
+        <%= submit_tag "Filter", class: 'ui button' %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
 </div>
+<div class="ui section divider"></div>
 <table>
   <thead>
     <tr>
