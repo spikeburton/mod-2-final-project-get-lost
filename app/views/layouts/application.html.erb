@@ -7,9 +7,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui inverted menu">
+      <%= link_to "Home", root_path, class: "item" %>
+      <% if current_user %>
+        <%= link_to "Profile", user_path(current_user), class: "item" %>
+      <% end %>
+      <div class="right menu">
+        <% if current_user %>
+          <%= link_to "Log Out", logout_path, method: :delete, class: "item" %>
+        <% else %>
+          <%= link_to "Log In", login_path, class: "item" %>
+          <%= link_to "Sign Up", signup_path, class: "item" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="ui container">
+      <%= yield %>
+    </div>
   </body>
 </html>
