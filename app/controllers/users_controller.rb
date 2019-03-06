@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       session.delete :user_attributes
-      binding.pry
+      # binding.pry
       redirect_to user_path(@user)
     else
       render :username_signup
