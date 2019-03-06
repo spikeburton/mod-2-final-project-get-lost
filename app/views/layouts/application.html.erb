@@ -13,16 +13,16 @@
 
   <body>
     <div class="ui inverted menu">
-      <a class="active item">
+      <a class="item">
         Home
       </a>
-      <a class="item">
-        Messages
-      </a>
       <div class="right menu">
-        <a class="item">
-          Friends
-        </a>
+        <% if current_user %>
+          <%= link_to "Log Out", logout_path, method: :delete, class: "item" %>
+        <% else %>
+          <%= link_to "Log In", login_path, class: "item" %>
+          <%= link_to "Sign Up", signup_path, class: "item" %>
+        <% end %>
       </div>
     </div>
     <div class="ui container">
