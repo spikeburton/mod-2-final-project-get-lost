@@ -1,18 +1,15 @@
 <h1><%= "Welcome #{current_user.first_name}!" %></h1>
 <h3>Are you ready to <em>Get Lost</em>?</h3>
-
-<%= link_to "Add an Adventure", adventures_path %>
-<br><br>
-<%= link_to "Settings", settings_path %>
-<br><br>
-<p>My Saved Adventures</p>
-    <ul>
+<div class="ui section divider"></div>
+<div class="ui list">
+  <%= link_to "Add an Adventure", adventures_path, class: 'item' %>
+  <div class="item">My Saved Adventures</div>
+  <div class="item">
+    <div class="list">
     <% current_user.adventures.each do |adv| %>
-      <li><%= adv.location %></li>
+      <div class="item"><%= adv.location %></div>
     <% end %>
-    </ul>
-
+    </div>
+  </div>
+</div>
 <br><br>
-<%= form_tag logout_path, method: :delete do %>
-  <%= submit_tag "logout" %>
-<% end %>
