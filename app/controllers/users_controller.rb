@@ -1,25 +1,40 @@
 class UsersController < ApplicationController
-  before_action :authorize!, except: [:new, :create]
+  before_action :authorize!, except: [:new, :create, :validate_info]
   before_action :logged_in?, only: [:new, :create]
 
   def new
-    @user = User.new
-    render :signup
+    @signup = UserSignup::Base.new
+    @user = @signup.user
+    # render :signup
+    render :info_signup
+  end
+
+  def validate_info
+    @signup = UserSignup::Info.new(user_params)
+    session[:user_attributes] = @signup.user.attributes
+
+    @user = @signup.user
+    if @signup.valid?
+      render :username_signup
+    else
+      render :info_signup
+    end
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(session[:user_attributes])
+    @user.attributes = user_params
     if @user && @user.valid?
       @user.save
       session[:user_id] = @user.id
+      session.delete :user_attributes
       redirect_to user_path(@user)
     else
-      render :signup
+      render :username_signup
     end
   end
 
   def show
-    # binding.pry
     user = User.find(params[:id])
     return head(:forbidden) unless current_user == user
   end
