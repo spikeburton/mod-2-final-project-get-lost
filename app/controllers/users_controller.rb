@@ -9,38 +9,25 @@ class UsersController < ApplicationController
   end
 
   def validate_info
-    # current_step = params[:current_step]
-    # session[:user_attributes] = user_params
+    @signup = UserSignup::Info.new(user_params)
+    session[:user_attributes] = @signup.user.attributes
 
-    # case current_step
-    # when 'info'
-      @signup = UserSignup::Info.new(user_params)
-      # @signup.user.attributes = user_params
-      session[:user_attributes] = @signup.user.attributes
-      # binding.pry
-      @user = @signup.user
-      if @signup.valid?
-        render :username_signup #username_signup_user_path
-      else
-        render :info_signup
-      end
-    # when 'username'
-    #   @signup = UserSignup::UserName.new(session[:user_attributes])
-    #   @signup.user.attributes = user_params
-    #   session[:user_attributes] = @signup.user.attributes
-    #   binding.pry
-    # end
+    @user = @signup.user
+    if @signup.valid?
+      render :username_signup #username_signup_user_path
+    else
+      render :info_signup
+    end
   end
 
   def create
     @user = User.new(session[:user_attributes])
     @user.attributes = user_params
-    binding.pry
-    # @user = User.new(user_params)
     if @user && @user.valid?
       @user.save
       session[:user_id] = @user.id
       session.delete :user_attributes
+      binding.pry
       redirect_to user_path(@user)
     else
       render :username_signup

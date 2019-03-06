@@ -6,8 +6,6 @@
   </ul>
 <% end %>
 <%= form_for @user, url: signup_path do |f| %>
-  <%= hidden_field_tag :current_step, 'username' %>
-
   <%= f.label :username, "Choose a Username:" %>
   <%= f.text_field :username %>
   <br>
