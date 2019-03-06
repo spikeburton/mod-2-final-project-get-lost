@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :logged_in?, only: [:new, :create]
 
   def new
-    @user = User.new
+    @signup = UserSignup::Base.new
+    @user = @signup.user
     # render :signup
     render :info_signup
   end
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
     @user = @signup.user
     if @signup.valid?
-      render :username_signup #username_signup_user_path
+      render :username_signup
     else
       render :info_signup
     end

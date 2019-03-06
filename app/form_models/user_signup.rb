@@ -5,7 +5,7 @@ module UserSignup
 
     delegate *User.attribute_names.map { |a| [a, "#{a}="] }.flatten, to: :user
 
-    def initialize(user_attr)
+    def initialize(user_attr = {})
       @user = User.new(user_attr)
     end
   end
