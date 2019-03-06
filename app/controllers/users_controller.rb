@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  # before_action :authorize!, except: [:new, :create, :validate_signup]
-  # before_action :logged_in?, only: [:new, :create]
+  before_action :authorize!, except: [:new, :create, :validate_info]
+  before_action :logged_in?, only: [:new, :create]
 
   def new
     @user = User.new
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     render :info_signup
   end
 
-  def validate_signup
+  def validate_info
     # current_step = params[:current_step]
     # session[:user_attributes] = user_params
 

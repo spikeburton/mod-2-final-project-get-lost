@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   resource :user do
-    get :info_signup
-    get :username_signup
+    # get :info_signup
+    # get :username_signup
 
-    post :validate_signup
+    post :validate_info
   end
   get '/settings' => 'users#edit'
   post '/adventures/:id' => 'adventures#add_adventure_to_user', as: :add_adventure

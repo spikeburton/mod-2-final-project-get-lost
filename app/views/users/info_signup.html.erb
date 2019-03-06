@@ -8,7 +8,7 @@
   <% end %>
   </ul>
 <% end %>
-<%= form_for @user, url: validate_signup_user_path do |f| %>
+<%= form_for @user, url: validate_info_user_path do |f| %>
   <%= hidden_field_tag :current_step, 'info' %>
 
   <%= f.label :first_name, "First Name:" %>
