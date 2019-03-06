@@ -6,11 +6,11 @@
 <%= link_to "Settings", settings_path %>
 <br><br>
 <p>My Saved Adventures</p>
-    
+    <ul>
     <% current_user.adventures.each do |adv| %>
-      <%= adv.location %>
-      
+      <li><%= adv.location %></li>
     <% end %>
+    </ul>
 
 <br><br>
 <%= form_tag logout_path, method: :delete do %>
