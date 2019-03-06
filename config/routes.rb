@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/settings' => 'users#edit'
   post '/adventures/:id' => 'adventures#add_adventure_to_user', as: :add_adventure
   post '/adventures' => 'adventures#index'
-  # get '/users/:username' => 'users#show', as: 'user'
 
   resources :adventures
   resources :users, except: [:new, :create, :edit]
