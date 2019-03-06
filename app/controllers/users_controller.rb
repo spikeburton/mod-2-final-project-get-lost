@@ -36,8 +36,13 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
+    # binding.pry
     return head(:forbidden) unless current_user == user
   end
+
+  # def show
+  #   @user_adventures = UserAdventure.find(params[:id])
+  # end
 
   def edit
     render :settings
