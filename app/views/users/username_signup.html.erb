@@ -1,15 +1,22 @@
 <%= render 'signup' do %>
   <%= form_for @user, url: signup_path do |f| %>
-    <%= f.label :username, "Choose a Username:" %>
-    <%= f.text_field :username %>
-    <br>
-    <%= f.label :password, "Choose a Password:" %>
-    <%= f.password_field :password %>
-    <br>
-    <%= f.label :password_confirmation, "Re-enter Password:" %>
-    <%= f.password_field :password_confirmation %>
-    <br>
-    <%= f.submit "Sign Up" %>
+    <div class="field">
+      <%= f.label :username, "Choose a Username:" %>
+      <%= f.text_field :username %>
+    </div>
+    <div class="field">
+      <%= f.label :password, "Choose a Password:" %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Re-enter Password:" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="ui centered grid">
+      <div class="row">
+        <%= f.submit "Sign Up", class: "ui primary button" %>
+      </div>
+    </div>
   <% end %>
 <% end %>
 <% if @user.errors.messages %>
