@@ -1,23 +1,23 @@
 <h1><%= "Welcome #{current_user.first_name.capitalize}!" %></h1>
 <h3>Are you ready to <em>Get Lost</em>?</h3>
 <div class="ui section divider"></div>
-<div class="ui list">
-  <%= link_to "Add an Adventure", adventures_path, class: 'item' %>
-  <div class="item">My Saved Adventures</div>
-  <div class="item">
-    <table class="ui very basic table">
-    <% current_user.adventures.each do |adv| %>
-      <tr>
-        <td>
-          <%= link_to adv.location, adventure_path(adv) %>
-        </td>
-        <td class="right aligned">
-          <%= link_to user_adventure_path(adv), method: :delete do %>
-            <i class="trash icon" style="color: dimgray;"></i>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-    </table>
-  </div>
-</div>
+<%= link_to "Add an Adventure", adventures_path, class: 'item' %>
+<table class="ui very basic table">
+  <thead>
+    <tr><th>My Saved Adventures</th></tr>
+  </thead>
+  <tbody>
+  <% current_user.adventures.each do |adv| %>
+    <tr>
+      <td>
+        <%= link_to adv.location, adventure_path(adv) %>
+      </td>
+      <td class="right aligned">
+        <%= link_to user_adventure_path(adv), method: :delete do %>
+          <i class="trash icon" style="color: dimgray;"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
