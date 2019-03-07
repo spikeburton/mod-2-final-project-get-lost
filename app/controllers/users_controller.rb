@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     if @signup.valid?
       render :username_signup
     else
+      @errors = @signup.errors.full_messages
       render :info_signup
     end
   end
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
       session.delete :user_attributes
       redirect_to user_path(@user)
     else
+      @errors = @user.errors.full_messages
       render :username_signup
     end
   end
