@@ -4,7 +4,14 @@
   <div class="ui two column very relaxed grid">
     <div class="column">
       <div class="ui form">
-        <%= render 'info' %>
+        <%= form_for current_user do |f| %>
+          <%= render 'info', f: f %>
+          <div class="ui centered grid">
+            <div class="row">
+              <%= f.submit "Update Information", class: 'ui primary button' %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="middle aligned column">
