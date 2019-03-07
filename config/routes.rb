@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
-  post '/signup' => 'users#validate_info'
+  post '/signup' => 'users#validate_info', as: 'validate'
   get '/settings' => 'users#edit'
   post '/adventures/:id' => 'adventures#add_adventure_to_user', as: :add_adventure
   post '/adventures' => 'adventures#index'
