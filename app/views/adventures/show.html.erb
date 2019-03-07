@@ -1,15 +1,12 @@
 <h1><%= @adventure.location %></h1>
 <p><strong>Topography</strong>: <%= @adventure.topography.capitalize %></p>
 <div class="ui section divider"></div>
-<div class="ui form">
-  <%= form_for @adventure, method: :post, url: add_adventure_path do |f| %>
-    <%= f.submit "Add Adventure", class: "ui button" %>
-  <% end %>
-  <% if flash.alert %>
-    <div>
-      <p><%= flash.alert %></p>
-    </div>
-  <% end %>
-</div>
+<%= link_to "Add Adventure", adventures_user_adventures_path(@adventure), method: :post %>
+<% if flash.alert %>
+  <div>
+    <p><%= flash.alert %></p>
+  </div>
+<% end %>
 <br>
 <%= link_to "Back to Adventures", adventures_path %>
+<% console %>
