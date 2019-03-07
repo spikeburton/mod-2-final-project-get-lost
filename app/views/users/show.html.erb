@@ -7,7 +7,7 @@
   <div class="item">
     <div class="list">
     <% current_user.adventures.each do |adv| %>
-      <div class="item"><%= adv.location %></div>
+      <div class="item"><%= link_to adv.location, adventure_path(adv) %></div>
     <% end %>
     </div>
   </div>
