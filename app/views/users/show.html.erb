@@ -5,15 +5,19 @@
   <%= link_to "Add an Adventure", adventures_path, class: 'item' %>
   <div class="item">My Saved Adventures</div>
   <div class="item">
-    <div class="ui relaxed divided list">
+    <table class="ui very basic table">
     <% current_user.adventures.each do |adv| %>
-      <div class="item">
-      <%= link_to user_adventure_path(adv), method: :delete do %>
-        <i class="trash icon" style="color: dimgray;"></i>
-      <% end %>
-      <%= link_to adv.location, adventure_path(adv) %>
-      </div>
+      <tr>
+        <td>
+          <%= link_to adv.location, adventure_path(adv) %>
+        </td>
+        <td class="right aligned">
+          <%= link_to user_adventure_path(adv), method: :delete do %>
+            <i class="trash icon" style="color: dimgray;"></i>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
-    </div>
+    </table>
   </div>
 </div>
