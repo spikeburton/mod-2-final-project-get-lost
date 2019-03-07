@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   def new
     @signup = UserSignup::Base.new
     @user = @signup.user
-    # render :signup
     render :info_signup
   end
 
