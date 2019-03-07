@@ -7,7 +7,10 @@
   <div class="item">
     <div class="list">
     <% current_user.adventures.each do |adv| %>
-      <div class="item"><%= link_to adv.location, adventure_path(adv) %></div>
+      <div class="item">
+      <%= link_to adv.location, adventure_path(adv) %>
+      <%= link_to "Delete", adventures_user_adventure_path(adv), method: :delete %>
+      </div>
     <% end %>
     </div>
   </div>

@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   resources :adventures
   resources :users, except: [:new, :edit]
+  # resources :user_adventures, only: [:destroy]
+  resource :adventures do 
+    resources :user_adventures, only: [:destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
