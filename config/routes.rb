@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
-  post '/signup' => 'users#create'
-  post 'validate_info' => 'users#validate_info'
+  post '/signup' => 'users#validate_info'
   get '/settings' => 'users#edit'
   post '/adventures/:id' => 'adventures#add_adventure_to_user', as: :add_adventure
   post '/adventures' => 'adventures#index'
 
   resources :adventures
-  resources :users, except: [:new, :create, :edit]
+  resources :users, except: [:new, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
