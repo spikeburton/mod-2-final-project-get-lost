@@ -1,36 +1,6 @@
-<!-- TODO: Can we DRY this up? This form is repeated in settings.html.erb -->
 <%= render 'signup' do %>
   <%= form_for @user, url: validate_path do |f| %>
-    <div class="field">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </div>
-    <div class="field">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </div>
-    <div class="field">
-      <%= f.label :email, "Email:" %>
-      <%= f.email_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :address, "Address:" %>
-      <%= f.text_field :address %>
-    </div>
-    <div class="fields">
-      <div class="field">
-        <%= f.label :city, "City:" %>
-        <%= f.text_field :city %>
-      </div>
-      <div class="field">
-        <%= f.label :zipcode, "Zip:" %>
-        <%= f.number_field :zipcode %>
-      </div>
-      <div class="field">
-        <%= f.label :state, "State:" %>
-        <%= f.text_field :state %>
-      </div>
-    </div>
+    <%= render 'info', f: f %>
     <div class="ui centered grid">
       <div class="row">
         <%= f.submit "Continue", class: 'ui primary button' %>
