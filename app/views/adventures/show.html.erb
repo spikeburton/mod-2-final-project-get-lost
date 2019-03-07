@@ -1,12 +1,10 @@
 <h1><%= @adventure.location %></h1>
 <p><strong>Topography</strong>: <%= @adventure.topography.capitalize %></p>
 <div class="ui section divider"></div>
-<%= link_to "Add Adventure", adventure_user_adventures_path(@adventure), method: :post %>
-<% if flash.alert %>
-  <div>
-    <p><%= flash.alert %></p>
-  </div>
+<% if current_user.adventures.include? @adventure %>
+  <span style="color: dimgrey">You have already saved this Adventure.</span>
+<% else %>
+  <%= link_to "Add Adventure", adventure_user_adventures_path(@adventure), method: :post %>
 <% end %>
 <br>
 <%= link_to "Back to Adventures", adventures_path %>
-<% console %>
