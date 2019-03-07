@@ -1,6 +1,16 @@
 <h1>Sign Up</h1>
 <span>Come <em>Get Lost</em> with us!</span>
 <div class="ui section divider"></div>
+<% if @errors %>
+  <div class="ui relaxed divided list">
+  <% @errors.each do |e| %>
+    <div class="item" style="color: darkred">
+      <i class="exclamation icon"></i>
+      <%= e %>
+    </div>
+  <% end %>
+  </div>
+<% end %>
 <div class="ui segment">
   <div class="ui two column centered grid">
     <div class="column">
