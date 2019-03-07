@@ -1,5 +1,8 @@
 <h1>Sign Up</h1>
-<h3>Come <em>Get Lost</em> with us!</h3>
+<span>Come <em>Get Lost</em> with us!</span>
+<div class="ui section divider"></div>
+<%= render 'signup' do %>
+<% end %>
 <% if @signup.errors.messages %>
   <ul>
   <% @signup.errors.full_messages.each do |m| %>
