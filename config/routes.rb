@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   get '/settings' => 'users#edit'
   post '/adventures' => 'adventures#index'
 
-  resources :adventures
-  resources :users, except: [:new, :edit]
-  # resources :user_adventures, only: [:destroy]
-  resource :adventures do 
-    resources :user_adventures, only: [:create, :destroy]
+  resources :adventures, only: [:index, :show] do
+    resources :user_adventures, only: [:create]
   end
+  resources :user_adventures, only: [:destroy]
+  resources :users, except: [:new, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

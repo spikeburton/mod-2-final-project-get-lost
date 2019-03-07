@@ -12,14 +12,4 @@ class AdventuresController < ApplicationController
   def show
     @adventure = Adventure.find(params[:id])
   end
-
-  def add_adventure_to_user
-    @adventure = Adventure.find(params[:id])
-    if current_user.add_adventure(@adventure)
-      redirect_to current_user
-    else
-      flash[:alert] = "You have already saved this Adventure."
-      render :show
-    end
-  end
 end

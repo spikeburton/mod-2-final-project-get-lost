@@ -1,7 +1,7 @@
 <h1><%= @adventure.location %></h1>
 <p><strong>Topography</strong>: <%= @adventure.topography.capitalize %></p>
 <div class="ui section divider"></div>
-<%= link_to "Add Adventure", adventures_user_adventures_path(@adventure), method: :post %>
+<%= link_to "Add Adventure", adventure_user_adventures_path(@adventure), method: :post %>
 <% if flash.alert %>
   <div>
     <p><%= flash.alert %></p>
