@@ -1,14 +1,26 @@
 <h1>Login</h1>
+<div class="ui section divider"></div>
 <% if @message %>
   <p style="color: red"><%= @message %></p>
 <% end %>
-<%= form_tag login_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-
-  <%= submit_tag "login" %>
-<% end %>
-<%= link_to "Not registered? Sign up", signup_path %>
+<div class="ui placeholder segment">
+  <div class="ui centered two column grid">
+    <div class="column">
+      <div class="ui form">
+      <%= form_tag login_path do %>
+        <div class="fields">
+          <div class="field">
+            <%= label_tag :username %>
+            <%= text_field_tag :username %>
+          </div>
+          <div class="field">
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+          </div>
+        </div>
+        <%= submit_tag "Log In", class: "ui primary button" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
