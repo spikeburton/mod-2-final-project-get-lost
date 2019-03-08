@@ -31,7 +31,7 @@
     <% @adventures.each do |a| %>
       <tr>
         <td><%= link_to a.location, adventure_path(a) %></td>
-        <td><%= a.topography %></td>
+        <td><%= a.topography.capitalize %></td>
       </tr>
     <% end %>
   </tbody>

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      @message = "username and/or password incorrect"
+      @errors = "Username and/or password incorrect"
       render :login
     end
   end
