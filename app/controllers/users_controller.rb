@@ -43,11 +43,4 @@ class UsersController < ApplicationController
     session.delete :user_id
     redirect_to root_path
   end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name,
-      :email, :address, :city, :zipcode, :state)
-  end
 end
