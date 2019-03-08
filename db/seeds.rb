@@ -11,20 +11,20 @@
 # * `location:string`
 # * `topography:string`
 adventures = [
-  {name: "Altamaha Historic Scenic Byway", location: "SR 99, GA", topography: "coastal"},
-  {name: "Cohutta-Chattahoochee Scenic Byway", location: "SR 99, GA", topography: "rural"},
-  {name: "Enduring Farmlands Scenic Byway", location: "SR 99, GA", topography: "pastoral"},
-  {name: "Historic Effingham-Ebenezer Scenic Byway", location: "SR 99, GA", topography: "historical"},
-  {name: "Historic Piedmont Scenic Byway", location: "SR 99, GA", topography: "scenic"},
+  {name: "Altamaha Historic Scenic Byway", location: "GA 99, McIntosh, GA", topography: "coastal"},
+  {name: "Cohutta-Chattahoochee Scenic Byway", location: "GA 99, McIntosh, GA", topography: "rural"},
+  {name: "Enduring Farmlands Scenic Byway", location: "GA 99, McIntosh, GA", topography: "pastoral"},
+  {name: "Historic Effingham-Ebenezer Scenic Byway", location: "GA 99, McIntosh, GA", topography: "historical"},
+  {name: "Historic Piedmont Scenic Byway", location: "GA 99, McIntosh, GA", topography: "scenic"},
   {name: "Interstate 185", location: "SR 99, GA", topography: "wooded"},
-  {name: "Meriwether-Pike Scenic Byway", location: "SR 99, GA", topography: "historical"},
-  {name: "Millen-Jenkins County Scenic Byway", location: "SR 99, GA", topography: "historical"},
-  {name: "Monticello Crossroads Scenic Byway", location: "SR 99, GA", topography: "rural"},
-  {name: "Ocmulgee-Piedmont Scenic Byway", location: "SR 99, GA", topography: "fauna"},
-  {name: "Ridge and Valley Scenic Byway", location: "SR 99, GA", topography: "mountainous"},
-  {name: "Russell-Brasstown National Scenic Byway", location: "SR 99, GA", topography: "mountainous"},
-  {name: "South Fulton Scenic Byway", location: "SR 99, GA", topography: "hilly"},
-  {name: "Warren County-Piedmont Scenic Byway Extension", location: "SR 99, GA", topography: "hilly"}
+  {name: "Meriwether-Pike Scenic Byway", location: "GA 99, McIntosh, GA", topography: "historical"},
+  {name: "Millen-Jenkins County Scenic Byway", location: "GA 99, McIntosh, GA", topography: "historical"},
+  {name: "Monticello Crossroads Scenic Byway", location: "GA 99, McIntosh, GA", topography: "rural"},
+  {name: "Ocmulgee-Piedmont Scenic Byway", location: "GA 99, McIntosh, GA", topography: "fauna"},
+  {name: "Ridge and Valley Scenic Byway", location: "GA 99, McIntosh, GA", topography: "mountainous"},
+  {name: "Russell-Brasstown National Scenic Byway", location: "GA 99, McIntosh, GA", topography: "mountainous"},
+  {name: "South Fulton Scenic Byway", location: "GA 99, McIntosh, GA", topography: "hilly"},
+  {name: "Warren County-Piedmont Scenic Byway Extension", location: "GA 99, McIntosh, GA", topography: "hilly"}
 
 ]
 
