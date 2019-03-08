@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
+      @errors = ["Invalid update"]
       render :settings
     end
   end

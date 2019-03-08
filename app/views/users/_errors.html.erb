@@ -1,0 +1,10 @@
+<% if @errors %>
+  <div class="ui relaxed divided list">
+  <% @errors.each do |e| %>
+    <div class="item" style="color: darkred">
+      <i class="exclamation icon"></i>
+      <%= e %>
+    </div>
+  <% end %>
+  </div>
+<% end %>
