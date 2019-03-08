@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       @errors = @user.errors.full_messages
-      render :'signup/signup_username'
+      render :'signup/signup_username', layout: :'signup/signup'
     end
   end
 
