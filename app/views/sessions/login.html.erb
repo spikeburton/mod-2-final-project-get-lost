@@ -4,18 +4,24 @@
   <p style="color: red"><%= @message %></p>
 <% end %>
 <div class="ui placeholder segment">
-  <div class="ui centered two column grid">
+  <div class="ui column center page grid">
     <div class="column">
       <div class="ui form">
       <%= form_tag login_path do %>
         <div class="fields">
           <div class="field">
             <%= label_tag :username %>
-            <%= text_field_tag :username %>
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <%= text_field_tag :username %>
+            </div>
           </div>
           <div class="field">
             <%= label_tag :password %>
-            <%= password_field_tag :password %>
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <%= password_field_tag :password %>
+            </div>
           </div>
         </div>
         <%= submit_tag "Log In", class: "ui primary button" %>
