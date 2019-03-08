@@ -1,8 +1,6 @@
 <h1><%= @adventure.name %></h1>
 <p><strong>Topography</strong>: <%= @adventure.topography.capitalize %></p>
 <div class="ui section divider"></div>
-<div class="ui two column very relaxed grid">
-  <div class="column">
     <% if current_user.adventures.include? @adventure %>
       <span style="color: dimgrey">You have already saved this Adventure.</span>
     <% else %>
@@ -10,12 +8,16 @@
     <% end %>
     <br>
     <%= link_to "Back to Adventures", adventures_path %>
+<div class="ui two column very relaxed stackable grid">
+  <div class="middle aligned column">
     <iframe width="300" height="300" frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=ADDRESS_OR_COORDINATES"
+      src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.credentials.google_maps_api_key %>&maptype=satellite&q=<%= @adventure.location %>"
       allowfullscreen>
     </iframe>
   </div>
-    <div class="column"><img class="ui fluid image" src="/images/bridge.jpg">
+    <div class="column">
+      <img class="ui fluid image" src="/images/bridge.jpg">
+      </div>
     </div>
   </div>
 </div>
