@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :adventures, through: :user_adventures
   has_secure_password
 
-  include UserValidations::Info # conerns/user_validations.rb
+  include UserValidations::Info # concerns/user_validations.rb
   validates :username, presence: true, uniqueness: true
 
   def add_adventure(a)
