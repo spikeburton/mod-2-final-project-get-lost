@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :authorize!, except: [:index, :create]
   before_action :logged_in?, only: [:index, :create]
 
+  # FIXME: This is a kinda hacky fix for when a user signs up,
+  # fails to complete the last step and is redirected back to signup_username.html.erb
+  # if the user tries to reload the page the url is /users
   def index
     redirect_to signup_path
   end
