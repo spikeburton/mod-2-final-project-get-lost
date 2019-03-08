@@ -1,28 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authorize!, except: [:index, :new, :create, :validate_info]
-  before_action :logged_in?, only: [:index, :new, :create]
+  before_action :authorize!, except: [:index, :create]
+  before_action :logged_in?, only: [:index, :create]
 
   def index
     redirect_to signup_path
-  end
-
-  def new
-    @signup = UserSignup::Base.new
-    @user = @signup.user
-    render :info_signup
-  end
-
-  def validate_info
-    @signup = UserSignup::Info.new(user_params)
-    session[:user_attributes] = @signup.user.attributes
-
-    @user = @signup.user
-    if @signup.valid?
-      render :username_signup
-    else
-      @errors = @signup.errors.full_messages
-      render :info_signup
-    end
   end
 
   def create
@@ -35,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       @errors = @user.errors.full_messages
-      render :username_signup
+      render :'signup/signup_username'
     end
   end
 
@@ -61,12 +42,5 @@ class UsersController < ApplicationController
     current_user.destroy
     session.delete :user_id
     redirect_to root_path
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name,
-      :email, :address, :city, :zipcode, :state)
   end
 end

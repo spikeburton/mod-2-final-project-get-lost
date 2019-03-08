@@ -1,6 +1,6 @@
-<%= render 'signup' do %>
-  <%= form_for @user, url: validate_path do |f| %>
-    <%= render 'info', f: f %>
+<%= render 'layouts/signup' do %>
+  <%= form_for @user, url: signup_path do |f| %>
+    <%= render 'users/info', f: f %>
     <div class="ui centered grid">
       <div class="row">
         <%= f.submit "Continue", class: 'ui primary button' %>

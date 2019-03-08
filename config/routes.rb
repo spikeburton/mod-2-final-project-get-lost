@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  get '/signup' => 'users#new'
-  post '/signup' => 'users#validate_info', as: 'validate'
+  get '/signup' => 'signup#new'
+  post '/signup' => 'signup#validate'
   get '/settings' => 'users#edit'
   post '/adventures' => 'adventures#index'
 
