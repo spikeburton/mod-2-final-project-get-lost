@@ -1,4 +1,4 @@
-<%= render 'signup' do %>
+<%= render 'layouts/signup' do %>
   <%= form_for @user, url: signup_path do |f| %>
     <%= render 'users/info', f: f %>
     <div class="ui centered grid">
