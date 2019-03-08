@@ -6,11 +6,11 @@ class UsersController < ApplicationController
     redirect_to signup_path
   end
 
-  def new
-    @signup = UserSignup::Base.new
-    @user = @signup.user
-    render :info_signup
-  end
+  # def new
+  #   @signup = UserSignup::Base.new
+  #   @user = @signup.user
+  #   render :info_signup
+  # end
 
   def validate_info
     @signup = UserSignup::Info.new(user_params)
