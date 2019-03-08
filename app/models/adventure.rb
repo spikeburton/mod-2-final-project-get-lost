@@ -4,6 +4,6 @@ class Adventure < ApplicationRecord
 
   def self.topographies
     # self.all.collect(&:topography).uniq
-    self.pluck(:topography).uniq.map { |t| t.capitalize }
+    self.pluck(:topography).uniq
   end
 end
