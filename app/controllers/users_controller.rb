@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authorize!, except: [:index, :new, :create, :validate_info]
-  before_action :logged_in?, only: [:index, :new, :create]
+  before_action :authorize!, except: [:index, :create]
+  before_action :logged_in?, only: [:index, :create]
 
   def index
     redirect_to signup_path
