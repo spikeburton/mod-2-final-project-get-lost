@@ -11,20 +11,20 @@
 # * `location:string`
 # * `topography:string`
 adventures = [
-  {location: "Altamaha Historic Scenic Byway", topography: "coastal"},
-  {location: "Cohutta-Chattahoochee Scenic Byway", topography: "rural"},
-  {location: "Enduring Farmlands Scenic Byway", topography: "pastoral"},
-  {location: "Historic Effingham-Ebenezer Scenic Byway", topography: "historical"},
-  {location: "Historic Piedmont Scenic Byway", topography: "scenic"},
-  {location: "Interstate 185", topography: "wooded"},
-  {location: "Meriwether-Pike Scenic Byway", topography: "historical"},
-  {location: "Millen-Jenkins County Scenic Byway", topography: "historical"},
-  {location: "Monticello Crossroads Scenic Byway", topography: "rural"},
-  {location: "Ocmulgee-Piedmont Scenic Byway", topography: "fauna"},
-  {location: "Ridge and Valley Scenic Byway", topography: "mountainous"},
-  {location: "Russell-Brasstown National Scenic Byway", topography: "mountainous"},
-  {location: "South Fulton Scenic Byway", topography: "hilly"},
-  {location: "Warren County-Piedmont Scenic Byway Extension", topography: "hilly"}
+  {name: "Altamaha Historic Scenic Byway", location: "", topography: "coastal"},
+  {name: "Cohutta-Chattahoochee Scenic Byway", location: "", topography: "rural"},
+  {name: "Enduring Farmlands Scenic Byway", location: "", topography: "pastoral"},
+  {name: "Historic Effingham-Ebenezer Scenic Byway", location: "", topography: "historical"},
+  {name: "Historic Piedmont Scenic Byway", location: "", topography: "scenic"},
+  {name: "Interstate 185", location: "", topography: "wooded"},
+  {name: "Meriwether-Pike Scenic Byway", location: "", topography: "historical"},
+  {name: "Millen-Jenkins County Scenic Byway", location: "", topography: "historical"},
+  {name: "Monticello Crossroads Scenic Byway", location: "", topography: "rural"},
+  {name: "Ocmulgee-Piedmont Scenic Byway", location: "", topography: "fauna"},
+  {name: "Ridge and Valley Scenic Byway", location: "", topography: "mountainous"},
+  {name: "Russell-Brasstown National Scenic Byway", topography: "mountainous"},
+  {name: "South Fulton Scenic Byway", location: "", topography: "hilly"},
+  {name: "Warren County-Piedmont Scenic Byway Extension", location: "", topography: "hilly"}
 
 ]
 
