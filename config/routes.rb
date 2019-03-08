@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   get '/signup' => 'signup#new'
-  post '/signup' => 'signup#validate'#_info', as: 'validate'
+  post '/signup' => 'signup#validate'
   get '/settings' => 'users#edit'
   post '/adventures' => 'adventures#index'
 
