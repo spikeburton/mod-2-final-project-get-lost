@@ -11,6 +11,7 @@ module UserSignup
   end
 
   class Info < Base
+    # concerns/user_validations.rb
     include UserValidations::Info
   end
 end
