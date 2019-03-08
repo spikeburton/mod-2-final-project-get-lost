@@ -22,7 +22,7 @@ adventures = [
   {name: "Monticello Crossroads Scenic Byway", location: "", topography: "rural"},
   {name: "Ocmulgee-Piedmont Scenic Byway", location: "", topography: "fauna"},
   {name: "Ridge and Valley Scenic Byway", location: "", topography: "mountainous"},
-  {name: "Russell-Brasstown National Scenic Byway", topography: "mountainous"},
+  {name: "Russell-Brasstown National Scenic Byway", location: "", topography: "mountainous"},
   {name: "South Fulton Scenic Byway", location: "", topography: "hilly"},
   {name: "Warren County-Piedmont Scenic Byway Extension", location: "", topography: "hilly"}
 
