@@ -23,14 +23,14 @@
 <table class="ui single line table">
   <thead>
     <tr>
-      <th>Location</th>
+      <th>Name</th>
       <th>Topography</th>
     </tr>
   </thead>
   <tbody>
     <% @adventures.each do |a| %>
       <tr>
-        <td><%= link_to a.location, adventure_path(a) %></td>
+        <td><%= link_to a.name, adventure_path(a) %></td>
         <td><%= a.topography.capitalize %></td>
       </tr>
     <% end %>

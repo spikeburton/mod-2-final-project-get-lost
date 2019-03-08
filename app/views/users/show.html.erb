@@ -11,7 +11,7 @@
   <% current_user.adventures.each do |adv| %>
     <tr>
       <td>
-        <%= link_to adv.location, adventure_path(adv) %>
+        <%= link_to adv.name, adventure_path(adv) %>
       </td>
       <td class="right aligned">
         <%= link_to user_adventure_path(adv), method: :delete do %>
