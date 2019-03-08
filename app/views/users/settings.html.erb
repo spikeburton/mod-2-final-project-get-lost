@@ -1,15 +1,6 @@
 <h1>Edit Settings</h1>
 <div class="ui section divider"></div>
-<% if @errors %>
-  <div class="ui relaxed divided list">
-  <% @errors.each do |e| %>
-    <div class="item" style="color: darkred">
-      <i class="exclamation icon"></i>
-      <%= e %>
-    </div>
-  <% end %>
-  </div>
-<% end %>
+<%= render 'errors' %>
 <div class="ui segment">
   <div class="ui two column very relaxed grid">
     <div class="column">
@@ -38,4 +29,3 @@
     Or
   </div>
 </div>
-<% console %>
