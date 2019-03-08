@@ -1,7 +1,10 @@
 <h1>Login</h1>
 <div class="ui section divider"></div>
-<% if @message %>
-  <p style="color: red"><%= @message %></p>
+<% if @errors %>
+  <div style="color: darkred">
+    <i class="ban icon"></i>
+    <%= @errors %>
+  </div>
 <% end %>
 <div class="ui placeholder segment">
   <div class="ui column center page grid">
