@@ -12,18 +12,18 @@ class UsersController < ApplicationController
   #   render :info_signup
   # end
 
-  def validate_info
-    @signup = UserSignup::Info.new(user_params)
-    session[:user_attributes] = @signup.user.attributes
+  # def validate_info
+  #   @signup = UserSignup::Info.new(user_params)
+  #   session[:user_attributes] = @signup.user.attributes
 
-    @user = @signup.user
-    if @signup.valid?
-      render :username_signup
-    else
-      @errors = @signup.errors.full_messages
-      render :info_signup
-    end
-  end
+  #   @user = @signup.user
+  #   if @signup.valid?
+  #     render :username_signup
+  #   else
+  #     @errors = @signup.errors.full_messages
+  #     render :info_signup
+  #   end
+  # end
 
   def create
     @user = User.new(session[:user_attributes])
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       @errors = @user.errors.full_messages
-      render :username_signup
+      render :'signup/signup_username'
     end
   end
 
